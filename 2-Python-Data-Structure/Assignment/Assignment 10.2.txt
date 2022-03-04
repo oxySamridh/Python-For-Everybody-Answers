@@ -5,13 +5,16 @@ Once you have accumulated the counts for each hour, print out the counts, sorted
 
 #Use mbox-short.txt File name
 
+# Updated code that will definately work
+# by SAMRIDH RAMUKA
 name = input("Enter file:")
 f = open(name)
 dic = {}
 for i in f:
     if i.startswith("From") and len(i.split()) > 2:
         line = i.split()
-        if not dic.has_key(line[5][:2]):
+        temp=line[5][:2]
+        if not (temp in dic.keys()):
             dic[line[5][:2]] = 1
         else:
             dic[line[5][:2]] += 1
